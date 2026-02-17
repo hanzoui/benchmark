@@ -28,6 +28,8 @@ if comfy.model_management.is_nvidia():
     import subprocess
 from .nodes import BenchmarkWorkflow  # Import the custom node
 
+cuda_device_arg = comfy.cli_args.args.cuda_device
+smi_id = "" if cuda_device_arg is None else f"--id={cuda_device_arg}"
 
 VERSION = 0
 # currently, for simplicity we use a global variable to store the execution context;
@@ -42,10 +44,10 @@ INITIAL_PSUTIL_QUERY = None
 psutil_query = ["timestamp", "used", "total"]
 
 nvidia_smi_query = ["timestamp", "memory.used", "memory.total", "utilization.gpu", "utilization.memory", "power.draw", "power.draw.instant", "power.limit", "pcie.link.gen.current", "pcie.link.gen.max", "pcie.link.width.current"]
-_nvidia_smi_query_list = ["nvidia-smi", "--query-gpu=" + ",".join(nvidia_smi_query), "--format=csv,noheader,nounits"]
+_nvidia_smi_query_list = ["nvidia-smi", "--query-gpu=" + ",".join(nvidia_smi_query), "--format=csv,noheader,nounits", smi_id]
 
 info_nvidia_smi_query = ["name", "count", "driver_version", "display_active", "vbios_version", "power.management"]
-_info_nvidia_smi_query_list = ["nvidia-smi", "--query-gpu=" + ",".join(info_nvidia_smi_query), "--format=csv,noheader,nounits"]
+_info_nvidia_smi_query_list = ["nvidia-smi", "--query-gpu=" + ",".join(info_nvidia_smi_query), "--format=csv,noheader,nounits", smi_id]
 
 # For NVIDIA devices, during the benchmark setup a process to call nvidia-smi regularly (or with varying intervals)
 def nvidia_smi_thread(out_queue: Queue, in_queue: Queue, check_interval: float):
