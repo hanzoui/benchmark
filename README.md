@@ -3,7 +3,7 @@ Custom extension for benchmarking Hanzo Studio performance
 
 ## Output
 
-Benchmark results are saved to the `Hanzo Studio/outputs/benchmarks` directory as JSON files with timestamps in their filenames.
+Benchmark results are saved to the `HanzoStudio/outputs/benchmarks` directory as JSON files with timestamps in their filenames.
 
 ## Configuration
 
