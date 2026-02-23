@@ -2,7 +2,7 @@ from comfy_api.latest import io
 
 class BenchmarkWorkflow(io.ComfyNode):
     """
-    A node to control benchmarking in comfyui-benchmark extension.
+    A node to control benchmarking in hanzo-benchmark extension.
     """
 
     @classmethod

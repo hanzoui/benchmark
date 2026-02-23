@@ -779,7 +779,7 @@ def create_benchmark_visualization(json_file):
     fig.update_yaxes(showticklabels=False, row=operations_row, col=1, range=[-0.5, 0.5])
 
     fig.update_layout(
-        title=f"ComfyUI Benchmark - {data['workflow_name']}",
+        title=f"Hanzo Studio Benchmark - {data['workflow_name']}",
         height=1080,
         hovermode='x',
         legend=dict(
@@ -1034,7 +1034,7 @@ def create_benchmark_comparison(json_files):
     legend_y_position = -60 / (100 + (fixed_height_per_benchmark * num_benchmarks))
     
     fig.update_layout(
-        title="ComfyUI Benchmark Comparison",
+        title="Hanzo Studio Benchmark Comparison",
         height=100 + (fixed_height_per_benchmark * num_benchmarks),  # Fixed height per benchmark
         hovermode='x',  # Changed from 'x unified' to match single visualization
         legend=dict(
@@ -1059,7 +1059,7 @@ if __name__ == "__main__":
     import os
     import glob
     
-    parser = argparse.ArgumentParser(description='Visualize ComfyUI benchmark results')
+    parser = argparse.ArgumentParser(description='Visualize Hanzo Studio benchmark results')
     parser.add_argument('benchmark_file', nargs='+', help='Path to benchmark JSON file(s) or directory. Multiple files will create a comparison view.')
     parser.add_argument('--save-image', dest='save_image', nargs='?', const='default', 
                         help='Save visualization as an image file (PNG, JPG, SVG, etc.). If no path provided, saves in current directory.')

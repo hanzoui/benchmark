@@ -138,12 +138,12 @@ def load_config():
                 loaded_config = yaml.safe_load(f)
                 config = merge_nested_dicts(default_config, loaded_config, copy_dict1=True)
         except yaml.reader.ReaderError as e:
-            logging.error(f"ReaderError loading config.yaml for comfyui-benchmark, will replace with default config.json instead: {e}")
+            logging.error(f"ReaderError loading config.yaml for hanzo-benchmark, will replace with default config.json instead: {e}")
             config = default_config
         with open(config_file, "w") as f:
             yaml.dump(config, f)
     else:
-        logging.info(f"No config.yaml found for comfyui-benchmark, creating default config at {config_file}")
+        logging.info(f"No config.yaml found for hanzo-benchmark, creating default config at {config_file}")
         config = default_config
         with open(config_file, "w") as f:
             yaml.dump(config, f)
@@ -548,7 +548,7 @@ def hook_PromptExecutor_execute():
             if should_save_benchmark and context.is_nvidia_smi_thread_enabled() and ENABLE_NVIDIA_SMI_DATA:
                 out_queue, in_queue, thread = create_nvidia_smi_thread(context.get_nvidia_smi_check_interval())
                 thread_started = True
-            # hook caches, but only once per startup of ComfyUI
+            # hook caches, but only once per startup of Hanzo Studio
             hook_PromptExecutor_caches_clean_unused(executor)
             try:
                 start_datetime = datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S.%f")

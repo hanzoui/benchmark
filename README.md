@@ -1,9 +1,9 @@
-# comfyui-benchmark
-Custom extension for benchmarking ComfyUI performance
+# hanzo-benchmark
+Custom extension for benchmarking Hanzo Studio performance
 
 ## Output
 
-Benchmark results are saved to the `ComfyUI/outputs/benchmarks` directory as JSON files with timestamps in their filenames.
+Benchmark results are saved to the `Hanzo Studio/outputs/benchmarks` directory as JSON files with timestamps in their filenames.
 
 ## Configuration
 
@@ -13,7 +13,7 @@ The benchmark behavior can be configured using `config.yaml`. If a Benchmark Wor
 
 - On first run, a `config.yaml` file is automatically generated with default settings
 - Alternatively, you can rename `config.yaml.example` to `config.yaml` before the first run to use your preferred settings
-- The configuration is read at the start of each workflow execution, so you can modify settings without restarting ComfyUI
+- The configuration is read at the start of each workflow execution, so you can modify settings without restarting Hanzo Studio
 
 ### Configuration Options
 

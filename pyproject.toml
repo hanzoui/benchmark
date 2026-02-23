@@ -1,6 +1,6 @@
 [project]
 name = "benchmark"
-description = "A tool for benchmarking ComfyUI performance."
+description = "A tool for benchmarking Hanzo Studio performance."
 version = "1.0.5"
 license = {file = "LICENSE"} 
 # classifiers = [
@@ -22,15 +22,15 @@ license = {file = "LICENSE"}
 
 
 [project.urls]
-Repository = "https://github.com/Comfy-Org/comfyui-benchmark"
-#  Used by Comfy Registry https://registry.comfy.org
-Documentation = "https://github.com/Comfy-Org/comfyui-benchmark/wiki"
-"Bug Tracker" = "https://github.com/Comfy-Org/comfyui-benchmark/issues"
+Repository = "https://github.com/hanzoui/benchmark"
+#  Used by Comfy Registry https://registry.hanzo.ai
+Documentation = "https://github.com/hanzoui/benchmark/wiki"
+"Bug Tracker" = "https://github.com/hanzoui/benchmark/issues"
 
 [tool.comfy]
 PublisherId = "comfyorg"
-DisplayName = "comfyui-benchmark"
+DisplayName = "hanzo-benchmark"
 Icon = ""
 includes = [] 
-# "requires-comfyui" = ">=1.0.0"  # ComfyUI version compatibility
+# "requires-comfyui" = ">=1.0.0"  # Hanzo Studio version compatibility
 
